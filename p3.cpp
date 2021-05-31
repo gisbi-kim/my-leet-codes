@@ -6,14 +6,15 @@ using std::endl;
 
 std::vector<bool> is_alphabet_used_table; 
 std::vector<int> is_alphabet_where_used_table; 
-const int NUM_CHARS_MAX = 1000;
+const int NUM_CHARS_MAX = 100000;
 
 std::map<char, int> IdxTableOfAlphabet;
+std::map<char, bool> IdxTableOfAlphabetAdded;
 
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) 
-    {    
+    {            
         // init 
         is_alphabet_used_table = vector<bool>(NUM_CHARS_MAX, false);
         is_alphabet_where_used_table = vector<int>(NUM_CHARS_MAX, -1);
@@ -24,8 +25,9 @@ public:
         // init existing charactre map 
         int allocated_char_idx = 0;
         for(auto _c : s) {
-            if( IdxTableOfAlphabet.find(_c) == IdxTableOfAlphabet.end() ) {
+            if( IdxTableOfAlphabetAdded[_c] == false ) {
                 IdxTableOfAlphabet[_c] = allocated_char_idx;
+                IdxTableOfAlphabetAdded[_c] == true; 
                 allocated_char_idx++;
             }            
         }
@@ -33,8 +35,8 @@ public:
         // main 
         int max_size = 0;
         deque<int> substr;
-        for(char& _c : s) 
-        {
+        for(char& _c : s) {
+            //
             cout << _c << endl;
             
             int char_idx = IdxTableOfAlphabet[_c];
@@ -62,7 +64,7 @@ public:
                 is_alphabet_where_used_table[char_idx] = substr.size();                
             }
             cout << "substr.size() " << substr.size() << endl;
-            if(substr.size() > max_size)
+            if(substr.size() >= max_size)
                 max_size = substr.size();
         }
         // 
