@@ -46,4 +46,10 @@ public:
     }
 };
 
+/*
+    Result: 
+    Runtime: 17 ms, faster than 16.60% of C++ online submissions for Largest Number.
+    Memory Usage: 11.2 MB, less than 66.36% of C++ online submissions for Largest Number.
+*/
+
 
