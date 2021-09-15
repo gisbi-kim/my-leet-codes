@@ -67,15 +67,15 @@ private:
     MyQueue<int> checker; 
 
 public:
-    bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int thers) 
+    bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int thres) 
     {
         for(auto& elm: nums) 
         {    
             if( checker.size() <= k ) {
-                checker.push(elm, thers);   
+                checker.push(elm, thres);   
             } else {
                 checker.pop();  
-                checker.push(elm, thers);   
+                checker.push(elm, thres);   
             }
 
             if( checker.is_answer_found() ) {
