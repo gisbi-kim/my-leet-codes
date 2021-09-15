@@ -2,6 +2,7 @@
   Runtime: 976 ms, faster than 5.02% of C++ online submissions for Contains Duplicate II.
   Memory Usage: 81 MB, less than 10.54% of C++ online submissions for Contains Duplicate II.
 */
+
 template<typename T>
 class MyQueue {
 private:
