@@ -1,3 +1,7 @@
+/* idea
+    recursive function call 
+*/
+    
 /* result 
     Runtime: 41 ms, faster than 5.03% of C++ online submissions for Linked List Cycle II.
     Memory Usage: 12.1 MB, less than 6.42% of C++ online submissions for Linked List Cycle II.
@@ -17,7 +21,7 @@ class Solution {
 public:
     ListNode * start_address = NULL;
 
-    set<long long> addresses;
+    set<ListNode *> addresses;
     bool is_circle = true;
 
 public:
@@ -28,12 +32,9 @@ public:
             return NULL;
         }
         
-        // main 
-        long long this_address = (long long)(head);
-        cout << this_address << endl; 
-        
-        if( addresses.find(this_address) == addresses.end() ) {
-            addresses.insert(this_address);
+        // main         
+        if( addresses.find(head) == addresses.end() ) {
+            addresses.insert(head);
         } else {
             start_address = head;
         }
