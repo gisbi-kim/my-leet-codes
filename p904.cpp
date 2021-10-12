@@ -14,7 +14,11 @@ traverse the idx row with two-pointer strategy
 
 */
     
-//     
+
+/* result
+    Runtime: 216 ms, faster than 21.68% of C++ online submissions for Fruit Into Baskets.
+    Memory Usage: 63.8 MB, less than 22.90% of C++ online submissions for Fruit Into Baskets.
+*/
 
 vector<pair<int, int>> consructFruitTable(vector<int>& fruits) {
     vector<pair<int /*fruit*/, int /*count*/>> fruit_table;
@@ -124,7 +128,7 @@ public:
     int totalFruit(vector<int>& fruits) 
     {    
         auto fruit_table = consructFruitTable(fruits);
-        // for(auto& elm: fruit_table) {
+        // for(auto& elm: fruit_table) { // verification 
         //     cout << elm.first << "/" << elm.second << endl;
         // }
                 
