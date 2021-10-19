@@ -1,3 +1,8 @@
+/*
+result 
+    Runtime: 0 ms, faster than 100.00% of C++ online submissions for Substrings of Size Three with Distinct Characters.
+    Memory Usage: 6.1 MB, less than 94.50% of C++ online submissions for Substrings of Size Three with Distinct Characters.
+*/
 class Solution {
 public:
     int countGoodSubstrings(string s) {
