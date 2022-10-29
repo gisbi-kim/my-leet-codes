@@ -1,3 +1,14 @@
+/* 
+Runtime
+    12 ms
+    Beats
+        69.53%
+Memory
+    9.2 MB
+    Beats
+        20.47%
+*/
+    
 using std::cout;
 using std::endl;
 
